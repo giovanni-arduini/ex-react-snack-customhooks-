@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 function useDate() {
-  const [currentDate, setCurrentDate] = useState({});
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
-    interval = setInterval(() => {
+    const interval = setInterval(() => {
       setCurrentDate(new Date());
     }, 1000);
 
