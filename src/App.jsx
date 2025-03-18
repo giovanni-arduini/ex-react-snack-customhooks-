@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import "./App.css";
 import useSwitch from "./useSwitch";
 
 function App() {
   const [isOn, toggle] = useSwitch();
+
+  console.log(isOn);
 
   return (
     <>
