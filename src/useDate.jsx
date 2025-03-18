@@ -4,9 +4,12 @@ function useDate() {
   const [currentDate, setCurrentDate] = useState({});
 
   useEffect(() => {
-    setInterval(() => {
+    interval = setInterval(() => {
       setCurrentDate(new Date());
     }, 1000);
+
+    // cleanup function per evitare memory leak
+    return () => clearInterval(interval);
   }, []);
 
   console.log(currentDate);
