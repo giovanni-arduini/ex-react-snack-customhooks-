@@ -14,7 +14,19 @@ function useCustomPointer(newPointer) {
     };
   }, []);
 
-  return <div>{newPointer}</div>;
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: mousePosition.y,
+        left: mousePosition.x,
+        transform: "translate(-50%, -50%)",
+        // cursor: "none",
+      }}
+    >
+      {newPointer}
+    </div>
+  );
 }
 
 export default useCustomPointer;
